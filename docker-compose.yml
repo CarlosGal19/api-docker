@@ -16,3 +16,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=MONGO_USER
       - MONGO_INITDB_ROOT_PASSWORD=MONGO_PASSWORD
+    volumes:
+      - monguito-data:/data/db
+      # - mysql-data:/var/lib/mysql
+      # - postgres-data:/var/lib/postgresql/data
+volumes:
+  monguito-data:
