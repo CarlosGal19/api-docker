@@ -4,9 +4,4 @@ RUN mkdir -p /home/app
 
 COPY . /home/app
 
-ENV MONGO_DB_SERVER=mongodb://USER:ADMIN@HOST:PORT/DB_NAME?authSource=admin
-ENV PORT=5000
-
-EXPOSE 5000
-
 CMD ["node", "home/app/index.js"]
