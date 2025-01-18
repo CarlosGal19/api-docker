@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  nodito:
+    build: .
+    ports:
+      - "5000:5000"
+    links:
+      - monguito
+    environment:
+      - PORT=5000
+      - MONGO_DB_SERVER=mongodb://MONGO_USER:MONGO_PASSWORD@monguito:27017/DB_NAME?authSource=admin
+  monguito:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=MONGO_USER
+      - MONGO_INITDB_ROOT_PASSWORD=MONGO_PASSWORD
